@@ -1,9 +1,9 @@
-[2026-05-24 11:15:45] [INFO] === Startup begin ===
-[2026-05-24 11:15:45] [INFO] Keyboard layout detected
-[2026-05-24 11:15:45] [INFO] Loaded default.cfg
-[2026-05-24 11:15:45] [INFO] Configuration initialized successfully
-[2026-05-24 11:15:45] [INFO] Starting launcher GUI
-[2026-05-24 11:15:50] [INFO] Validating CS2 version
-[2026-05-24 11:15:51] [INFO] Initializing game addresses
-[2026-05-24 11:15:51] [INFO] Initializing global variables
-[2026-05-24 11:15:51] [INFO] Attaching to Counter-Strike 2
+[2026-05-24 12:53:03] [INFO] === Startup begin ===
+[2026-05-24 12:53:03] [INFO] Keyboard layout detected
+[2026-05-24 12:53:03] [INFO] Loaded default.cfg
+[2026-05-24 12:53:03] [INFO] Configuration initialized successfully
+[2026-05-24 12:53:03] [INFO] Starting launcher GUI
+[2026-05-24 12:53:07] [INFO] Validating CS2 version
+[2026-05-24 12:53:07] [INFO] Initializing game addresses
+[2026-05-24 12:53:07] [INFO] Initializing global variables
+[2026-05-24 12:53:07] [INFO] Attaching to Counter-Strike 2
