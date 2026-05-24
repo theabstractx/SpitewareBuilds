@@ -4,16 +4,16 @@ setlocal
 set "BUILD_DIR=%~dp0"
 set "PARENT_DIR=%BUILD_DIR%.."
 
-call :copy_file "%PARENT_DIR%\Clar1tyLoader\build\debug\Clar1tyLoader.exe" "%BUILD_DIR%Clar1tyLoader_Debug.exe"
+call :copy_file "%PARENT_DIR%\loader\build\debug\Clar1tyLoader.exe" "%BUILD_DIR%Clar1tyLoader_Debug.exe"
 if errorlevel 1 goto :failed
 
-call :copy_file "%PARENT_DIR%\Clar1tyLoader\build\release\Clar1tyLoader.exe" "%BUILD_DIR%Clar1tyLoader.exe"
+call :copy_file "%PARENT_DIR%\loader\build\release\Clar1tyLoader.exe" "%BUILD_DIR%Clar1tyLoader.exe"
 if errorlevel 1 goto :failed
 
-call :copy_file "%PARENT_DIR%\cs2_kernel_esp\build\Clar1tyChairs\cs2_kernel_esp.exe" "%BUILD_DIR%cs2_kernel_esp.exe"
+call :copy_file "%PARENT_DIR%\kernel-esp\build\Clar1tyChairs\cs2_kernel_esp.exe" "%BUILD_DIR%cs2_kernel_esp.exe"
 if errorlevel 1 goto :failed
 
-call :copy_file "%PARENT_DIR%\cs2_kernel_pro\build\Clar1tyChairs\cs2_kernel_pro.exe" "%BUILD_DIR%cs2_kernel_pro.exe"
+call :copy_file "%PARENT_DIR%\kernel-pro\build\Clar1tyChairs\cs2_kernel_pro.exe" "%BUILD_DIR%cs2_kernel_pro.exe"
 if errorlevel 1 goto :failed
 
 echo Refresh complete.
@@ -42,8 +42,11 @@ if errorlevel 1 (
 )
 
 echo Updated %~nx2
+pause
 exit /b 0
 
 :failed
 echo Refresh failed.
+pause
 exit /b 1
+
