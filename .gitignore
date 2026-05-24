@@ -1,6 +1,6 @@
-# Clar1ty builds gitignore
-Clar1tyLoader_Debug.exe
-Clar1tyLoader_Release.exe
+# Spiteware builds gitignore
+SpitewareLoader_Debug.exe
+SpitewareLoader_Release.exe
 /dist/
 *.log
 loader_debug_build.log

@@ -1,6 +1,6 @@
-# ClarityBuilds
+# SpitewareBuilds
 
-This repository is a release artifact store — it contains compiled binaries, not source code. When a new build is ready, executables are committed here and a GitHub Release is created automatically. The Clar1ty Loader downloads files from these releases at startup.
+This repository is a release artifact store — it contains compiled binaries, not source code. When a new build is ready, executables are committed here and a GitHub Release is created automatically. The Spiteware Loader downloads files from these releases at startup.
 
 **Status:** Working
 
@@ -9,19 +9,19 @@ This repository is a release artifact store — it contains compiled binaries, n
 ## Contents
 
 ```
-ClarityBuilds/
-├── Clar1tyLoader.exe           ← Loader binary (production)
-├── Clar1tyLoader_Debug.exe     ← Loader binary (debug build)
-├── cs2_kernel_pro.exe          ← CS2 Kernel Pro cheat (flat copy)
-├── cs2_kernel_esp.exe          ← CS2 Kernel ESP cheat (flat copy)
+SpitewareBuilds/
+├── SpitewareLoader.exe           ← Loader binary (production)
+├── SpitewareLoader_Debug.exe     ← Loader binary (debug build)
+├── cs2_kernel_pro.exe            ← CS2 Kernel Pro cheat (flat copy)
+├── cs2_kernel_esp.exe            ← CS2 Kernel ESP cheat (flat copy)
 ├── mods/
 │   ├── CS2 Kernel Pro/
 │   │   └── cs2_kernel_pro.exe
 │   └── CS2 Kernel ESP/
 │       └── cs2_kernel_esp.exe
-├── auto_commit.bat             ← Manual release helper script
+├── auto_commit.bat               ← Manual release helper script
 └── .github/workflows/
-    └── release-on-main.yml     ← Automatic GitHub Release on push to main
+    └── release-on-main.yml       ← Automatic GitHub Release on push to main
 ```
 
 ---
@@ -33,10 +33,10 @@ ClarityBuilds/
 **Run `refresh_builds.bat` after every rebuild of `cs2/loader`, `cs2/kernel-pro`, or `cs2/kernel-esp`.** The exes in this folder are not the build outputs — they're copies. If you skip the refresh, the release will contain stale exes regardless of what you changed in source.
 
 `refresh_builds.bat` copies:
-- `cs2/loader/build/release/Clar1tyLoader.exe` → `Clar1tyLoader.exe`
-- `cs2/loader/build/debug/Clar1tyLoader.exe` → `Clar1tyLoader_Debug.exe`
-- `cs2/kernel-pro/build/Clar1tyChairs/cs2_kernel_pro.exe` → `cs2_kernel_pro.exe`
-- `cs2/kernel-esp/build/Clar1tyChairs/cs2_kernel_esp.exe` → `cs2_kernel_esp.exe`
+- `cs2/loader/build/release/SpitewareLoader.exe` → `SpitewareLoader.exe`
+- `cs2/loader/build/debug/SpitewareLoader.exe` → `SpitewareLoader_Debug.exe`
+- `cs2/kernel-pro/build/Spiteware/cs2_kernel_pro.exe` → `cs2_kernel_pro.exe`
+- `cs2/kernel-esp/build/Spiteware/cs2_kernel_esp.exe` → `cs2_kernel_esp.exe`
 
 Each missing source is a hard failure — the script aborts and reports which file wasn't found. After a successful refresh, proceed to the automatic or manual release path below.
 
@@ -77,7 +77,7 @@ Tags are created by the GitHub Actions workflow via `softprops/action-gh-release
 
 ## How the Loader Uses This Repository
 
-The Clar1ty Loader retrieves download URLs from KeyAuth app variables at startup. These variables are configured in the KeyAuth dashboard and point to specific GitHub Release asset URLs from this repository.
+The Spiteware Loader retrieves download URLs from KeyAuth app variables at startup. These variables are configured in the KeyAuth dashboard and point to specific GitHub Release asset URLs from this repository.
 
 Example KeyAuth app variables:
 
@@ -96,4 +96,4 @@ The Loader compares the version variable against its local copy and downloads a 
 
 - `cs2/cs2_kernel_pro` — source for `cs2_kernel_pro.exe`
 - `cs2/cs2_kernel_esp` — source for `cs2_kernel_esp.exe`
-- `website/clar1tychairs` — manages KeyAuth app variables pointing to these releases
+- `website/spiteware` — manages KeyAuth app variables pointing to these releases
