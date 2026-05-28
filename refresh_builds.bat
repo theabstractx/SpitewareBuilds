@@ -13,9 +13,11 @@ if errorlevel 1 goto :failed
 call :copy_file "%PARENT_DIR%\kernel-esp\build\Spiteware\cs2_kernel_esp.exe" "%BUILD_DIR%cs2_kernel_esp.exe"
 if errorlevel 1 goto :failed
 
-call :copy_file "%PARENT_DIR%\kernel-pro\build\Spiteware\cs2_kernel_pro.exe" "%BUILD_DIR%cs2_kernel_pro.exe"
+call :copy_file "%PARENT_DIR%\kernel-pro\build\Spiteware\cs2_kernel_pro.exe" "%BUILD_DIR%cs2_kernel_pro.exe"    
 if errorlevel 1 goto :failed
 
+call :copy_file "%PARENT_DIR%\kernel-obsidian\build\Spiteware\cs2_kernel_obsidian.exe" "%BUILD_DIR%cs2_kernel_obsidian.exe"    
+if errorlevel 1 goto :failed
 echo Refresh complete.
 exit /b 0
 
@@ -42,7 +44,6 @@ if errorlevel 1 (
 )
 
 echo Updated %~nx2
-pause
 exit /b 0
 
 :failed

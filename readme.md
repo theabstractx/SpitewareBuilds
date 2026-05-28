@@ -14,11 +14,14 @@ SpitewareBuilds/
 ├── SpitewareLoader_Debug.exe     ← Loader binary (debug build)
 ├── cs2_kernel_pro.exe            ← CS2 Kernel Pro cheat (flat copy)
 ├── cs2_kernel_esp.exe            ← CS2 Kernel ESP cheat (flat copy)
+├── cs2_kernel_obsidian.exe       ← CS2 Kernel Obsidian (Thesis Build)
 ├── mods/
 │   ├── CS2 Kernel Pro/
 │   │   └── cs2_kernel_pro.exe
-│   └── CS2 Kernel ESP/
-│       └── cs2_kernel_esp.exe
+│   ├── CS2 Kernel ESP/
+│   │   └── cs2_kernel_esp.exe
+│   └── CS2 Kernel Obsidian/
+│       └── cs2_kernel_obsidian.exe
 ├── auto_commit.bat               ← Manual release helper script
 └── .github/workflows/
     └── release-on-main.yml       ← Automatic GitHub Release on push to main
@@ -30,13 +33,14 @@ SpitewareBuilds/
 
 ### Step 0: Refresh local artifacts (MANDATORY before any release)
 
-**Run `refresh_builds.bat` after every rebuild of `cs2/loader`, `cs2/kernel-pro`, or `cs2/kernel-esp`.** The exes in this folder are not the build outputs — they're copies. If you skip the refresh, the release will contain stale exes regardless of what you changed in source.
+**Run `refresh_builds.bat` after every rebuild of `cs2/loader`, `cs2/kernel-pro`, `cs2/kernel-esp`, or `cs2/kernel-obsidian`.** The exes in this folder are not the build outputs — they're copies. If you skip the refresh, the release will contain stale exes regardless of what you changed in source.
 
 `refresh_builds.bat` copies:
 - `cs2/loader/build/release/SpitewareLoader.exe` → `SpitewareLoader.exe`
 - `cs2/loader/build/debug/SpitewareLoader.exe` → `SpitewareLoader_Debug.exe`
 - `cs2/kernel-pro/build/Spiteware/cs2_kernel_pro.exe` → `cs2_kernel_pro.exe`
 - `cs2/kernel-esp/build/Spiteware/cs2_kernel_esp.exe` → `cs2_kernel_esp.exe`
+- `cs2/kernel-obsidian/build/Spiteware/cs2_kernel_pro.exe` → `cs2_kernel_obsidian.exe`
 
 Each missing source is a hard failure — the script aborts and reports which file wasn't found. After a successful refresh, proceed to the automatic or manual release path below.
 
@@ -85,8 +89,10 @@ Example KeyAuth app variables:
 |----------|-------|
 | `cs2_kernel_pro_version` | Version string (e.g. `"1.4"`) |
 | `cs2_kernel_esp_version` | Version string |
+| `cs2_kernel_obsidian_version` | Version string |
 | `cs2_kernel_pro_url` | GitHub Release asset download URL |
 | `cs2_kernel_esp_url` | GitHub Release asset download URL |
+| `cs2_kernel_obsidian_url` | GitHub Release asset download URL |
 
 The Loader compares the version variable against its local copy and downloads a fresh binary from the release asset URL if an update is available.
 
@@ -96,4 +102,5 @@ The Loader compares the version variable against its local copy and downloads a 
 
 - `cs2/cs2_kernel_pro` — source for `cs2_kernel_pro.exe`
 - `cs2/cs2_kernel_esp` — source for `cs2_kernel_esp.exe`
+- `cs2/kernel-obsidian` — source for `cs2_kernel_obsidian.exe`
 - `website/spiteware` — manages KeyAuth app variables pointing to these releases
